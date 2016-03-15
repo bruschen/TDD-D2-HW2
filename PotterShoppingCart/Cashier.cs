@@ -9,7 +9,11 @@ namespace PotterShoppingCart
     {
         public int check(List<BookOrder> BookList)
         {
-            throw new NotImplementedException();
+            int amount=0;
+
+            amount = (BookList.Select(m => m.Quantity).Sum())*100;
+
+            return amount;
         }
     }
 }
