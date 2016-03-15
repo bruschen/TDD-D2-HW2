@@ -19,7 +19,11 @@ namespace PotterShoppingCart
 
         private static int GetDiscount(int bookCnt)
         {
-            if (bookCnt > 2)
+            if (bookCnt > 3)
+            {
+                return (int)(100 * 0.8);
+            }
+            else if (bookCnt > 2)
             {
                 return (int)(100 * 0.9);
             }
