@@ -5,7 +5,9 @@ using System.Text;
 
 namespace PotterShoppingCart
 {
-    public class Class1
+    public class BookOrder
     {
+        public string BookName { get; set;}
+        public int Quantity {get; set;}
     }
 }
