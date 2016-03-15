@@ -80,5 +80,26 @@ namespace PotterShoppingCart.Test
             //assert
             Assert.AreEqual(expect, actual);
         }
+
+        [TestMethod]
+        public void 第一集_一本_第二本_一本_第三本_一本_第四本_一本_第五本_一本_總金額_375()
+        {
+            //arrange
+            List<BookOrder> BookList = new List<BookOrder>(){
+                new BookOrder() { BookName="HP1", Quantity=1 },
+                new BookOrder() { BookName="HP2", Quantity=1 },
+                new BookOrder() { BookName="HP3", Quantity=1 },
+                new BookOrder() { BookName="HP4", Quantity=1 },
+                new BookOrder() { BookName="HP5", Quantity=1 }
+            };
+            Cashier cashier = new Cashier();
+            int expect = 375;
+
+            //act
+            int actual = cashier.check(BookList);
+
+            //assert
+            Assert.AreEqual(expect, actual);
+        }
     }
 }
