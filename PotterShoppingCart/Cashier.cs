@@ -10,14 +10,27 @@ namespace PotterShoppingCart
         public int check(List<BookOrder> BookList)
         {
             int bookCnt=BookList.Select(m => m.Quantity).Sum();
-            int bookPrice = 100;
+            int bookPrice = 0;
 
-            if (bookCnt>1)
-            {
-                bookPrice =(int)(100 * 0.95);
-            }
+            bookPrice = GetDiscount(bookCnt);
 
             return bookCnt*bookPrice;
+        }
+
+        private static int GetDiscount(int bookCnt)
+        {
+            if (bookCnt > 2)
+            {
+                return (int)(100 * 0.9);
+            }
+            else if (bookCnt > 1)
+            {
+                return (int)(100 * 0.95);
+            }
+            else
+            {
+                return 100;
+            }
         }
     }
 }
