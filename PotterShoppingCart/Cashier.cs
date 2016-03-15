@@ -9,11 +9,15 @@ namespace PotterShoppingCart
     {
         public int check(List<BookOrder> BookList)
         {
-            int amount=0;
+            int bookCnt=BookList.Select(m => m.Quantity).Sum();
+            int bookPrice = 100;
 
-            amount = (BookList.Select(m => m.Quantity).Sum())*100;
+            if (bookCnt>1)
+            {
+                bookPrice =(int)(100 * 0.95);
+            }
 
-            return amount;
+            return bookCnt*bookPrice;
         }
     }
 }
